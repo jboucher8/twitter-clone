@@ -137,7 +137,12 @@ body {
 				font-size: 14px;
 				color: #999;
 				text-shadow: 0 1px 1px rgba(255,255,255,.75);
+				/*visibility: hidden;*/
 			}
+/*			#tweet-submit {
+				display: none;
+			}*/
+
 
 /* TWEET */
 .tweet {
