@@ -5,7 +5,7 @@ window.onload = function() {
 
 
 		$('#tweet-controls').css('display', 'none'); //hides char-count and tweet-submit button until you click in
-		$('.time').timeago();
+		// $('.time').timeago(); //Not sure if I needed this. It works without.
 
 		var charCountColor = $('#char-count').css('color'); //keeps char-count color gray after typing
 		var maxlength = 140;
@@ -67,25 +67,20 @@ window.onload = function() {
 			});
 
 			//Hide tweet actions, time, reply. Make appear when clicking on tweet.
-
-
 			$('.tweet').on('click', function() {
 				$(this).find('.stats').slideDown(500).removeClass('active');
 				$(this).find('.reply').slideDown(500).removeClass('active');
 				$('.stats.active').slideUp(500);
 				$('.reply.active').slideUp(500);
 				$(this).find('.stats').slideDown(500).addClass('active');
-				$(this).find('.reply').slideDown(500).addClass('active');
-				
+				$(this).find('.reply').slideDown(500).addClass('active');				
 			});
 
 		});
 
 			$('.stats').hide();
 			$('.reply').hide();
-		
-
-		// function tweetActionStuff() {
+			// function tweetActionStuff() {
 
 			//Show/hide 'reply, retweet, favorite, more..' Had to add above so the new tweet would have same function
 			$('.tweet').mouseenter(function() {
@@ -109,12 +104,27 @@ window.onload = function() {
 				
 			});
 
-			
+			//PUSHED 5/27 at 2:10pm
 			$('.action-favorite').on('click', function() {
-				var curCount = $(this).find('.num-favorites').val();
-				curCount = curCount + 1;
-				$(this).find('.num-favorites').html(curCount);
-			})
+				var count = $('.num-favorites').val();
+				count++;
+
+				// for (var i = 0; i < count.length; i++) {
+				// 	$('.num-favorites').clone()
+				// }
+				$('.num-favorites').prop('value', count);
+
+				// var count = $('.num-favorites').html();
+				// $(this).find('.num-favorites').html(count, count++);
+				// console.log('.num-favorites');
+
+				// var count = $('.num-favorites').val();
+				// var newVal = count++;
+				// $(count).find('.num-favorites').html(newVal);
+				console.log(count);
+
+				// console.log(newVal);
+			});
 
 
 
